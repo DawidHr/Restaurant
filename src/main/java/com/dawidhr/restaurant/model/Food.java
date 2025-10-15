@@ -35,7 +35,7 @@ public class Food {
     public Food() {
     }
 
-    public Food(Long id, String name, String description, String imgPath, LocalDateTime creationDate, LocalDateTime updateDate, Double price) {
+    public Food(Long id, String name, String description, String imgPath, LocalDateTime creationDate, LocalDateTime updateDate, Double price, boolean active) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -43,6 +43,7 @@ public class Food {
         this.creationDate = creationDate;
         this.updateDate = updateDate;
         this.price = price;
+        this.active = active;
     }
 
     public Long getId() {
@@ -99,5 +100,13 @@ public class Food {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }
