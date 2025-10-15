@@ -11,6 +11,9 @@ public class OrderItem {
     @JoinColumn(name = "food_id")
     private Food food;
 
+    private String foodName;
+    private double price;
+
     public OrderItem() {
     }
 
