@@ -22,10 +22,15 @@ public class Food {
     private String imgPath;
 
     @CreationTimestamp
+    @Column(name = "creation_date")
     private LocalDateTime creationDate;
+
     @UpdateTimestamp
+    @Column(name = "update_date")
     private LocalDateTime updateDate;
+
     private Double price;
+    private boolean active;
 
     public Food() {
     }
