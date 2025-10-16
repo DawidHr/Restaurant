@@ -25,6 +25,8 @@ public class Order {
     private String status;
     private long tableId;
     private double totalPrice;
+
+    @OneToMany
     private List<OrderItem> items;
 
     public Order() {
