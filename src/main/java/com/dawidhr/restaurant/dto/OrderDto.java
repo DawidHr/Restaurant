@@ -1,31 +1,19 @@
 package com.dawidhr.restaurant.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.util.List;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Setter
+@Getter
 public class OrderDto {
     private long tableId;
     private List<Long> foodIds;
-
-    public OrderDto(long tableId, List<Long> foodIds) {
-        this.tableId = tableId;
-        this.foodIds = foodIds;
-    }
-
-    public long getTableId() {
-        return tableId;
-    }
-
-    public void setTableId(long tableId) {
-        this.tableId = tableId;
-    }
-
-    public List<Long> getFoodIds() {
-        return foodIds;
-    }
-
-    public void setFoodIds(List<Long> foodIds) {
-        this.foodIds = foodIds;
-    }
 
     public static boolean isValid(OrderDto orderDto) {
         if (orderDto == null)
