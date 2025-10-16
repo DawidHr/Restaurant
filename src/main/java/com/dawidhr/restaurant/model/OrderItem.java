@@ -24,6 +24,14 @@ public class OrderItem {
         this.price = price;
     }
 
+    public static OrderItem create(Food food) {
+        OrderItem orderItem = new OrderItem();
+        orderItem.setFood(food);
+        orderItem.setFoodName(food.getName());
+        orderItem.setPrice(food.getPrice());
+        return orderItem;
+    }
+
     public Long getId() {
         return id;
     }

@@ -1,5 +1,6 @@
 package com.dawidhr.restaurant.dao;
 
+import com.dawidhr.restaurant.model.Order;
 import com.dawidhr.restaurant.repository.OrderRepository;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,4 +13,8 @@ public class OrderDao {
     @Autowired
     EntityManager entityManager;
 
+    public void save(Order order) {
+        orderRepository.save(order);
+        orderRepository.flush();
+    }
 }

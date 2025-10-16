@@ -1,10 +1,12 @@
 package com.dawidhr.restaurant.model;
 
+import com.dawidhr.restaurant.dto.OrderDto;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -36,6 +38,13 @@ public class Order {
         this.tableId = tableId;
         this.totalPrice = totalPrice;
         this.items = items;
+    }
+
+    public static Order create(OrderDto orderDto) {
+        Order order = new Order();
+        order.setStatus("New");
+        order.setTableId(orderDto.getTableId());
+        return order;
     }
 
     public Long getId() {
@@ -92,5 +101,17 @@ public class Order {
 
     public void setItems(List<OrderItem> items) {
         this.items = items;
+    }
+
+    public void addItem(OrderItem orderItem) {
+        if(this.items == null)
+            this.items = new ArrayList<>();
+
+        this.items.add(orderItem);
+        addToTotalPrice(orderItem.getPrice());
+    }
+
+    private void addToTotalPrice(double price) {
+        setTotalPrice(getTotalPrice()+price);
     }
 }
