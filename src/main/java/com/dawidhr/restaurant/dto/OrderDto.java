@@ -4,9 +4,9 @@ import java.util.List;
 
 public class OrderDto {
     private long tableId;
-    private List<Integer> foodIds;
+    private List<Long> foodIds;
 
-    public OrderDto(long tableId, List<Integer> foodIds) {
+    public OrderDto(long tableId, List<Long> foodIds) {
         this.tableId = tableId;
         this.foodIds = foodIds;
     }
@@ -19,11 +19,11 @@ public class OrderDto {
         this.tableId = tableId;
     }
 
-    public List<Integer> getFoodIds() {
+    public List<Long> getFoodIds() {
         return foodIds;
     }
 
-    public void setFoodIds(List<Integer> foodIds) {
+    public void setFoodIds(List<Long> foodIds) {
         this.foodIds = foodIds;
     }
 
